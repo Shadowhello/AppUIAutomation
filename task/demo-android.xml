@@ -6,12 +6,12 @@
         <listener class-name="framework.TestListener" />
     </listeners>
 
-    <test name="HW-8">
+    <test name="XIAOMI-4">
         <parameter name = "port" value = "4723"/>
-        <parameter name = "udid" value = "SJE0217B29005225"/>
+        <parameter name = "udid" value = "d6744554"/>
         <parameter name = "wdaPort" value = "8001"/>
         <classes>
-            <class name="testcase.wechat.ShowMyMomentTest"/>
+            <class name="testcase.wechat.ClickEnglishQuoteTest"/>
         </classes>
     </test>
 </suite>

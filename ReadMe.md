@@ -2,6 +2,8 @@
 
 一个基于Appium 1.8.1、TestNG，Page Object模式开发的UI自动化测试框架
 
+本人对公司和个人提供APP UI自动化培训，有意者请加QQ 40690263
+
 ![](https://github.com/lgxqf/AppUIAutomation/blob/master/doc/structure.png)
 ![](/uploads/photo/2018/fc861afc-93c7-4fab-aa59-b5050886e600.png!large)
 ![](http://10.2.250.21/wiki/window/raw/master/AppUIAutomation/doc/structure.png)
@@ -188,7 +190,7 @@ MY_POST_PAGE_MOMENT_PIC_ID: 'visible == true AND type == "XCUIElementTypeStaticT
 ## 如何运行demo
 * demo实现的功能：打开微信(若未登录微信，请先手动登录)，然后打开朋友圈，查看第一个朋友圈(带图片的)
 * 启动Appium，然后运行以下命令
-* 方式一 ： 将工程打成Jar包，然后运行命令 java -jar UIAutomation-1.0-fat-tests  ./task/demo.xml
+* 方式一 ： 右键单击demo.xml ,选择运行, 然后会生成test class文件， 然后将工程打成Jar包(mvn package)，然后运行命令 java -jar target/UIAutomation-1.0-fat-tests.jar  task/demo.xml
 * 方式2  ： IDEA中 右键单击demo.xml ,选择运行。见下图
 
 ![](https://github.com/lgxqf/AppUIAutomation/blob/master/doc/Run-By-IDEA.png)

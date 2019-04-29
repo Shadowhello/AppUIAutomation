@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.*;
 
+
 /**
  * Created by Ma Yi on 2017/4/27.
  */
@@ -21,7 +22,11 @@ public class ConfigUtil {
     private static Map<String, Object> ymlMap;
     private static String rootDir;
     private static String screenshotDir;
+    private static boolean enableScreenShot;
+    private static int screenShotInterval = 2;
 
+    public static final String ENABLE_SCREENSHOT = "ENABLE_SCREENSHOT";
+    public static final String SCREENSHOT_INTERVAL = "SCREENSHOT_INTERVAL";
     public static final String IOS_BUNDLE_ID = "IOS_BUNDLE_ID";
     public static final String ADDITION_CONIG = "ADDITION_CONIG";
     public static final String IOS_WDA_PORT = "IOS_WDA_PORT";
@@ -96,6 +101,8 @@ public class ConfigUtil {
 
             addConfigItem(keyList);
 
+            enableScreenShot = getBooleanValue(ENABLE_SCREENSHOT);
+            screenShotInterval = (int)getLongValue(SCREENSHOT_INTERVAL);
             DEFAULT_WAIT_SEC = (int)getLongValue("DEFAULT_WAIT_SEC");
             DEFAULT_POLLING_INTERVAL_SEC = (int)getLongValue("DEFAULT_POLLING_INTERVAL_SEC");
 
@@ -145,6 +152,9 @@ public class ConfigUtil {
         return rootDir;
     }
 
+    public static boolean isEnableScreenShot(){
+        return enableScreenShot;
+    }
 
     public static String getActivityName() {
         return getStringValue("ANDROID_MAIN_ACTIVITY");
@@ -225,5 +235,9 @@ public class ConfigUtil {
         Map<String,Object> map = (Map)configItems.get(key);
         log.info("Config : " + key + " = " + map);
         return map;
+    }
+
+    public static int getScreenShotInterval(){
+        return screenShotInterval;
     }
 }
